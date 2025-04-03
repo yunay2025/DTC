@@ -1,0 +1,22 @@
+#Game for younger family member who loves guessing games Important random and generating secret number-v1 Created by Yike Yuan
+#Limit guess to max-v3
+import random
+
+#main routine
+num_guesses=1
+Max_GUESSES=3
+number =random.randint(1,100)#Getting a secret number between 1-100
+answer=int(input("Guss the number:"))#for testing purposes
+
+while answer!=number and num_guesses<Max_GUESSES:
+    num_guesses+=1
+    if answer<number:
+        answer=int(input("That is to low\nTry again:"))
+    else:
+        answer=int(input("That is to high\nTry again:"))
+#If user guesses in less than Max number
+if answer==number:
+    print("You got it!")
+else:
+    print(f"You couldn't guess it after {Max_GUESSES} tries!")
+    print(f"Too bad. The number was {number}")
