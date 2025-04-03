@@ -1,0 +1,9 @@
+#Game for younger family member who loves guessing games Important random and generating secret number-v1 Created by Yike Yuan
+import random
+
+#main routine
+number =random.randint(1,100)#Getting a secret number between 1-100
+answer=int(input("Guss the number:"))#for testing purposes
+while answer !=number:
+    answer=int(input("Wrong\nTry again"))
+print("You got it")
