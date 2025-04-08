@@ -1,0 +1,68 @@
+#program to manage a dog-sitting service v1
+#Add roll list, drop off, pickup and roll printing function v2
+#create by yike yuan
+
+roll=[]
+
+def int_checker():
+    number_=""
+
+
+def drop_off():
+    #Adding dog to roll
+    dog_name=input("Enter the name of the dog:")
+    roll.append(dog_name)
+
+def pick_up():
+    #Removing dog form roll
+    dog_name = input("Enter the name of the dog:")
+    if dog_name in roll:
+        roll.remove(dog_name)
+        print(f"{dog_name} has been removed form roll.")
+    else:
+        print(f"Sorry, we have no dog name  {dog_name}")
+
+def calc_cost(num_dogs):
+    rate=22.5
+    days=int_checker("How many days to change for:")
+    cost=num_dogs*days*rate
+    print(f"The cost for {num_dogs} dogs for {days} is ${cost:.2f}")
+
+def print_roll():
+    for dog in roll:
+        print(f"\t{dog}")
+    print()
+
+def end_program():
+    print("Goodbye")
+
+#Main routine
+print("-"*50)
+print("Welcome to DogsRus dog sitting service")
+print("What would you like to do? Pleases choose one of the items below:")
+print("-"*70)
+
+choice="0"
+while choice!="50":
+    print("What do you want to do?")
+    print()
+    print("1 Drop off a dog")
+    print("2 Pick up a dog")
+    print("3 calculate cost")
+    print("4 Print dog roll")
+    print("5 Exit the system")
+    print("="*70)
+
+    choice=input("Enter your choice(number between 1 and 5")
+    if choice=="1":
+        drop_off()
+    elif choice=="2":
+        pick_up()
+    elif choice =="3":
+        calc_cost(len(roll))
+    elif choice =="4":
+         print_roll()
+    elif choice =="5":
+        end_program()
+    else:
+        print("Must number beteewn 1 and 5")
